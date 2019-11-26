@@ -1,27 +1,25 @@
 #include "Producto.h"
 
-
-
 void Producto::verifica(void)
 {
-    if (this->numero<0)
-        {
-        numero=0;
-         float p;
-    cout<<"numero invalido"<<endl;
-    cout<<"cual es el numero:";cin>> p;
-    modificaNumero(p);
-    verifica();
-        }
-    if(this->precio<0)
-    {
-    precio=0.0;
-    float p;
-    cout<<"precio invalido"<<endl;
-    cout<<"cual es el precio:";cin>> p;
-    modificaPrecio(p);
-    verifica();
-    }
+if (this->numero<0)
+{
+numero=0;
+float p;
+cout<<"numero invalido"<<endl;
+cout<<"cual es el numero:";cin>> p;
+modificaNumero(p);
+verifica();
+}
+if(this->precio<0)
+{
+precio=0.0;
+float p;
+cout<<"precio invalido"<<endl;
+cout<<"cual es el precio:";cin>> p;
+modificaPrecio(p);
+verifica();
+}
 
 }
 Producto::Producto(void)
@@ -55,83 +53,72 @@ cout<<"--------------"<<endl
     <<"Numero:"<<this->numero<<endl
     <<"Precio:"<<this->precio<<endl
     <<"--------------"<<endl;
-
 }
+
 string Producto::dameNombre(void)
 {
 return this->Nombre;
-
-
 }
+
 void Producto::modificaNombre(string N)
 {
 this->Nombre=N;
-
-
 }
+
 int Producto::dameNumero(void)
 {
-
 return this->numero;
-
 }
+
 void Producto::modificaNumero(int n)
 {
 this->numero=n;
 verifica();
-
 }
+
 float Producto::damePrecio(void)
 {
-
 return this->precio;
-
 }
+
 void Producto::modificaPrecio(float p)
 {
-
 this->precio=p;
 verifica();
 }
+
 void Producto::modificaDatos(string N, int n, float p)
 {
-
 this->Nombre=N;
 this->numero=n;
 this->precio=p;
 verifica();
 }
+
 void Producto::guardaLista(ofstream& salida)
 {
-
-
-    salida<<Nombre<<","<<numero<<","<<precio<<endl;
-
-
+salida<<Nombre<<","<<numero<<","<<precio<<endl;
 }
+
 void Producto::cargaLista(ifstream& entrada)
 {
-     string datos;
-   string atributo;
+string datos;
+string atributo;
 
+getline(entrada,datos);
 
+stringstream ss(datos);
 
-   getline(entrada,datos);
+getline(ss,atributo,',');
+Nombre=atributo;
 
-   stringstream ss(datos);
+getline(ss,atributo,',');
+numero=atoi(atributo.c_str());
 
-   getline(ss,atributo,',');
-   Nombre=atributo;
-
-   getline(ss,atributo,',');
-   numero=atoi(atributo.c_str());
-
-   getline(ss,atributo);
-   precio=atof(atributo.c_str());
-
-
-
+getline(ss,atributo);
+precio=atof(atributo.c_str());
 }
+
 istream& operator>>(istream& teclado, Producto& X)
 {
     X.pideDatos();
