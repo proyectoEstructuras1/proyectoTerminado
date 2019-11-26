@@ -53,15 +53,15 @@ switch(op)
             a.insertaNodo(p);
            break;
         case 2:
-            cout<<"Esta es el arbol en pre orden"<<endl;
+            cout<<"Este es el arbol en pre orden"<<endl;
             a.muestraPre();
             break;
         case 3:
-            cout<<"Esta es el arbol en in orden"<<endl;
+            cout<<"Este es el arbol en in orden"<<endl;
             a.muestraIn();
             break;
         case 4:
-            cout<<"Esta es el arbol en pos orden"<<endl;
+            cout<<"Este es el arbol en pos orden"<<endl;
             a.muestraPos();
             break;
         case 5:
@@ -70,7 +70,7 @@ switch(op)
             break;
         case 6:
             a.guardaLista();
-            cout<<"Lista guardada"<<endl;
+            cout<<"Lista guardada con exito"<<endl;
             break;
         case 7:
             int d;
