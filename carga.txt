@@ -1,0 +1,20 @@
+computadora,2,5234.45
+celular,4,1222.4
+camara,3,333.5
+memoria,5,123.54
+television,1,7899.99
+pila,10,80
+audifonos,9,645.08
+anteojos,12,125
+micro sd,11,125.5
+gabinete Pc,16,680
+circuito integrado,6,30.5
+DVD,7,20.50
+lampara,8,70
+capacitor,13,5.45
+mochila,14,523.80
+calculadora,15,590.99
+arduino uno,20,140
+cautin,17,270
+vernier,19,99.99
+candado,18,250,90
